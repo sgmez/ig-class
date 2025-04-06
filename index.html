@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick a Door!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+        .door-container {
+            display: flex;
+            gap: 20px;
+        }
+        .door {
+            width: 100px;
+            height: 200px;
+            background-color: brown;
+            border: 5px solid #3e2723;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .door:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Pick a Door!</h1>
+    <div class="door-container">
+        <div class="door" onclick="revealActivity(1)">🚪</div>
+        <div class="door" onclick="revealActivity(2)">🚪</div>
+        <div class="door" onclick="revealActivity(3)">🚪</div>
+    </div>
+    <p id="activity"></p>
+    <script>
+        function revealActivity(doorNumber) {
+            const activities = {
+                1: "Watch a short video!",
+                2: "Play a quick game!",
+                3: "Do a fun quiz!"
+            };
+            document.getElementById("activity").innerText = activities[doorNumber];
+        }
+    </script>
+</body>
+</html>
